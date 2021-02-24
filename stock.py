@@ -34,7 +34,7 @@ def stock_percentage(prev_start_date, prev_start_end_date, start_date, end_date,
 
 def main():
     for stock_name in stock_name_list:
-        stock_percentage(prev_start_date, prev_start_end_date, start_date, end_date, stock_name)
+        stock_percentage(prev_start_date, prev_start_end_date, start_date, end_date, str(stock_name[0]))
 
     with open("Stock.csv", 'w') as csv_file:
         # creating a csv writer object
@@ -45,8 +45,6 @@ def main():
 
         # writing the data rows
         csv_writer.writerows(csv_rows)
-
-    print(csv_rows)
 
 
 main()
