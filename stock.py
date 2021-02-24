@@ -26,6 +26,7 @@ def stock_percentage(prev_start_date, prev_start_end_date, start_date, end_date,
         data = list(reader)
 
     percentage_change = (float(data[1][4]) - float(prev_data[1][4])) / float(prev_data[1][4])
+    # Number percentage and decimal in Python
     csv_rows.append([stock_name, str("{0:0.2f}%".format(percentage_change * 100))])
     os.remove("prev" + stock_name + ".csv")
     os.remove(stock_name + ".csv")
