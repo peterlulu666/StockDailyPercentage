@@ -6,9 +6,9 @@ prev_start_date = "2021-02-22"
 prev_start_end_date = "2021-02-23"
 start_date = "2021-02-23"
 end_date = "2021-02-24"
-stock_name_list = ["MSFT",
-                   "AAPL",
-                   "TSLA"]
+with open('stock_list.csv', newline='') as f_stock_list:
+    reader_stock_list = csv.reader(f_stock_list)
+    stock_name_list = list(reader_stock_list)
 
 csv_fields = ["Stock name", "Percentage change"]
 csv_rows = []
@@ -47,7 +47,6 @@ def main():
         csv_writer.writerows(csv_rows)
 
     print(csv_rows)
-
 
 
 main()
